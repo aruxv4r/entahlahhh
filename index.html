@@ -169,93 +169,112 @@
 
         <div class="surprise-card glass-panel">
           
-          <!-- Cute Teddy Bear & Bouquet Illustration -->
-          <div class="illustration-container">
-            <svg class="surprise-illustration" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="bear-fur" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#E2B391" />
-                  <stop offset="100%" stop-color="#C68B59" />
-                </radialGradient>
-                <linearGradient id="heart-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FF5252" />
-                  <stop offset="100%" stop-color="#E91E63" />
-                </linearGradient>
-                <linearGradient id="gold-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FFE082" />
-                  <stop offset="100%" stop-color="#D4AF37" />
-                </linearGradient>
-              </defs>
+          <!-- Romantic Photo Frame flanked by Flower Bouquet & Teddy Bear -->
+          <div class="photo-composition">
+            
+            <!-- Left Side: Bouquet of Flowers SVG -->
+            <div class="comp-side comp-bouquet" title="Rose Bouquet">
+              <svg viewBox="0 0 120 150" class="comp-svg">
+                <defs>
+                  <linearGradient id="comp-gold-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFE082" />
+                    <stop offset="100%" stop-color="#D4AF37" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(0, 5)">
+                  <!-- Stems -->
+                  <path d="M50 120 Q45 80 30 45" stroke="#4CAF50" stroke-width="4.5" stroke-linecap="round" />
+                  <path d="M50 120 Q55 80 70 40" stroke="#388E3C" stroke-width="4.5" stroke-linecap="round" />
+                  <path d="M50 120 Q50 75 50 28" stroke="#417D31" stroke-width="4.5" stroke-linecap="round" />
+                  
+                  <!-- Leaves -->
+                  <path d="M40 85 C22 80, 15 92, 38 98 Z" fill="#4CAF50" />
+                  <path d="M60 80 C78 75, 85 87, 62 93 Z" fill="#388E3C" />
 
-              <!-- Bouquet of Roses Left side -->
-              <g class="bouquet-group" transform="translate(30, 40)">
-                <!-- Stems -->
-                <path d="M30 110 Q25 70 15 40" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" />
-                <path d="M30 110 Q35 70 45 35" stroke="#388E3C" stroke-width="4" stroke-linecap="round" />
-                <path d="M30 110 Q30 65 30 25" stroke="#417D31" stroke-width="4" stroke-linecap="round" />
-                
-                <!-- Leaves -->
-                <path d="M22 75 C10 70, 5 80, 20 85 Z" fill="#4CAF50" />
-                <path d="M38 70 C50 65, 55 75, 40 80 Z" fill="#388E3C" />
+                  <!-- Rose Heads -->
+                  <circle cx="30" cy="40" r="16" fill="#FF4081" />
+                  <circle cx="30" cy="40" r="10" fill="#F50057" />
+                  <path d="M23 37 C25 32, 33 32, 35 37 C37 42, 29 46, 28 40 Z" fill="#FF80AB" />
 
-                <!-- Rose Heads -->
-                <circle cx="15" cy="35" r="14" fill="#FF4081" />
-                <circle cx="15" cy="35" r="9" fill="#F50057" />
-                <path d="M10 32 C12 28, 18 28, 20 32 C22 36, 16 40, 15 35 Z" fill="#FF80AB" />
+                  <circle cx="70" cy="35" r="17" fill="#E91E63" />
+                  <circle cx="70" cy="35" r="11" fill="#C2185B" />
+                  <path d="M63 32 C65 27, 73 27, 75 32 C77 37, 69 41, 68 35 Z" fill="#FF80AB" />
 
-                <circle cx="45" cy="30" r="15" fill="#E91E63" />
-                <circle cx="45" cy="30" r="10" fill="#C2185B" />
-                <path d="M40 27 C42 23, 48 23, 50 27 C52 31, 46 35, 45 30 Z" fill="#FF80AB" />
+                  <circle cx="50" cy="22" r="18" fill="#FF1744" />
+                  <circle cx="50" cy="22" r="12" fill="#D50000" />
+                  <path d="M43 18 C45 13, 53 13, 55 18 C57 23, 49 28, 48 22 Z" fill="#FF8A80" />
 
-                <circle cx="30" cy="20" r="16" fill="#FF1744" />
-                <circle cx="30" cy="20" r="11" fill="#D50000" />
-                <path d="M25 17 C27 13, 33 13, 35 17 C37 21, 31 25, 30 20 Z" fill="#FF8A80" />
+                  <!-- Golden Ribbon Wrap -->
+                  <path d="M30 110 Q50 122 70 110 Q50 98 30 110 Z" fill="url(#comp-gold-ribbon)" />
+                  <path d="M50 112 L35 138 L47 132 L50 112 Z" fill="url(#comp-gold-ribbon)" />
+                  <path d="M50 112 L65 138 L53 132 L50 112 Z" fill="url(#comp-gold-ribbon)" />
+                </g>
+              </svg>
+            </div>
 
-                <!-- Ribbon Wrap -->
-                <path d="M15 100 Q30 110 45 100 Q30 90 15 100 Z" fill="url(#gold-ribbon)" />
-                <path d="M30 102 L20 125 L28 120 L30 102 Z" fill="url(#gold-ribbon)" />
-                <path d="M30 102 L40 125 L32 120 L30 102 Z" fill="url(#gold-ribbon)" />
-              </g>
+            <!-- Center: Polaroid Photo Frame with Girl's Image -->
+            <div class="photo-frame-card" id="photo-frame-card">
+              <div class="frame-tape"></div>
+              <div class="frame-heart-pin">❤️</div>
+              <div class="photo-container" id="photo-container">
+                <img src="/photo.jpg" alt="The Prettiest Girl" class="photo-img" id="photo-img" referrerPolicy="no-referrer" />
+              </div>
+              <div class="photo-caption">My Prettiest Girl ♡</div>
+            </div>
 
-              <!-- Cute Teddy Bear Center-Right -->
-              <g class="bear-group" transform="translate(110, 30)">
-                <!-- Ears -->
-                <circle cx="30" cy="30" r="14" fill="url(#bear-fur)" />
-                <circle cx="30" cy="30" r="8" fill="#F8BBD0" />
-                <circle cx="90" cy="30" r="14" fill="url(#bear-fur)" />
-                <circle cx="90" cy="30" r="8" fill="#F8BBD0" />
+            <!-- Right Side: Teddy Bear SVG -->
+            <div class="comp-side comp-bear" title="Teddy Bear">
+              <svg viewBox="0 0 120 150" class="comp-svg">
+                <defs>
+                  <radialGradient id="comp-bear-fur" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#E2B391" />
+                    <stop offset="100%" stop-color="#C68B59" />
+                  </radialGradient>
+                  <linearGradient id="comp-heart-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FF5252" />
+                    <stop offset="100%" stop-color="#E91E63" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(0, 5)">
+                  <!-- Ears -->
+                  <circle cx="30" cy="28" r="13" fill="url(#comp-bear-fur)" />
+                  <circle cx="30" cy="28" r="7.5" fill="#F8BBD0" />
+                  <circle cx="90" cy="28" r="13" fill="url(#comp-bear-fur)" />
+                  <circle cx="90" cy="28" r="7.5" fill="#F8BBD0" />
 
-                <!-- Head -->
-                <ellipse cx="60" cy="50" rx="36" ry="30" fill="url(#bear-fur)" />
-                <!-- Muzzle -->
-                <ellipse cx="60" cy="58" rx="16" ry="12" fill="#FFF" opacity="0.9" />
-                <!-- Nose -->
-                <ellipse cx="60" cy="54" rx="5" ry="4" fill="#3E2723" />
-                <!-- Eyes -->
-                <circle cx="48" cy="46" r="4" fill="#212121" />
-                <circle cx="49" cy="45" r="1.5" fill="#FFF" />
-                <circle cx="72" cy="46" r="4" fill="#212121" />
-                <circle cx="73" cy="45" r="1.5" fill="#FFF" />
-                <!-- Blushing Cheeks -->
-                <ellipse cx="40" cy="56" rx="6" ry="4" fill="#FF80AB" opacity="0.6" />
-                <ellipse cx="80" cy="56" rx="6" ry="4" fill="#FF80AB" opacity="0.6" />
+                  <!-- Head -->
+                  <ellipse cx="60" cy="48" rx="35" ry="29" fill="url(#comp-bear-fur)" />
+                  <!-- Muzzle -->
+                  <ellipse cx="60" cy="55" rx="15" ry="11" fill="#FFF" opacity="0.9" />
+                  <!-- Nose -->
+                  <ellipse cx="60" cy="52" rx="5" ry="4" fill="#3E2723" />
+                  <!-- Eyes -->
+                  <circle cx="48" cy="44" r="3.8" fill="#212121" />
+                  <circle cx="49" cy="43" r="1.5" fill="#FFF" />
+                  <circle cx="72" cy="44" r="3.8" fill="#212121" />
+                  <circle cx="73" cy="43" r="1.5" fill="#FFF" />
+                  <!-- Blushing Cheeks -->
+                  <ellipse cx="40" cy="54" rx="6" ry="4" fill="#FF80AB" opacity="0.6" />
+                  <ellipse cx="80" cy="54" rx="6" ry="4" fill="#FF80AB" opacity="0.6" />
 
-                <!-- Body -->
-                <ellipse cx="60" cy="110" rx="32" ry="36" fill="url(#bear-fur)" />
+                  <!-- Body -->
+                  <ellipse cx="60" cy="102" rx="30" ry="32" fill="url(#comp-bear-fur)" />
 
-                <!-- Paws Holding Heart -->
-                <ellipse cx="32" cy="95" rx="12" ry="10" fill="url(#bear-fur)" transform="rotate(-15 32 95)" />
-                <ellipse cx="88" cy="95" rx="12" ry="10" fill="url(#bear-fur)" transform="rotate(15 88 95)" />
+                  <!-- Paws Holding Heart -->
+                  <ellipse cx="32" cy="88" rx="11" ry="9" fill="url(#comp-bear-fur)" transform="rotate(-15 32 88)" />
+                  <ellipse cx="88" cy="88" rx="11" ry="9" fill="url(#comp-bear-fur)" transform="rotate(15 88 88)" />
 
-                <!-- Big Shiny Heart Held by Bear -->
-                <path d="M60 120 C60 120, 32 100, 32 82 C32 72, 40 65, 50 65 C56 65, 59 68, 60 70 C61 68, 64 65, 70 65 C80 65, 88 72, 88 82 C88 100, 60 120, 60 120 Z" fill="url(#heart-grad)" />
-                <ellipse cx="48" cy="74" rx="4" ry="2" fill="#FFF" opacity="0.6" transform="rotate(-30 48 74)" />
+                  <!-- Big Shiny Heart Held by Bear -->
+                  <path d="M60 112 C60 112, 35 94, 35 77 C35 68, 42 62, 51 62 C57 62, 59 65, 60 67 C61 65, 63 62, 69 62 C78 62, 85 68, 85 77 C85 94, 60 112, 60 112 Z" fill="url(#comp-heart-grad)" />
+                  <ellipse cx="49" cy="70" rx="3.5" ry="1.8" fill="#FFF" opacity="0.6" transform="rotate(-30 49 70)" />
 
-                <!-- Legs -->
-                <ellipse cx="38" cy="140" rx="14" ry="10" fill="url(#bear-fur)" />
-                <ellipse cx="82" cy="140" rx="14" ry="10" fill="url(#bear-fur)" />
-              </g>
-            </svg>
+                  <!-- Legs -->
+                  <ellipse cx="40" cy="130" rx="13" ry="9" fill="url(#comp-bear-fur)" />
+                  <ellipse cx="80" cy="130" rx="13" ry="9" fill="url(#comp-bear-fur)" />
+                </g>
+              </svg>
+            </div>
+
           </div>
 
           <!-- Celebration Message -->

@@ -514,13 +514,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 10. REPLAY BUTTON LOGIC
+  // 10. REPLAY BUTTON & PHOTO UPLOAD LOGIC
   // ------------------------------------------------------------------------
   if (btnReplay) {
     btnReplay.addEventListener('click', () => {
       if (confettiAnimationId) cancelAnimationFrame(confettiAnimationId);
       switchScene(1);
     });
+  }
+
+  // Photo Persistence
+  const photoImg = document.getElementById('photo-img');
+  const savedPhoto = localStorage.getItem('custom_photo');
+  if (savedPhoto && photoImg) {
+    photoImg.src = savedPhoto;
   }
 
   // ------------------------------------------------------------------------

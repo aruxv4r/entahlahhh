@@ -818,18 +818,112 @@ html, body {
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-.illustration-container {
-  width: 220px;
-  height: 180px;
+/* Photo Composition: Polaroid Frame flanked by Bouquet and Teddy Bear */
+.photo-composition {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin: 6px 0;
+  position: relative;
 }
 
-.surprise-illustration {
+.photo-frame-card {
+  position: relative;
+  background: #FFFFFF;
+  padding: 12px 12px 16px 12px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(233, 30, 99, 0.22), 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 235, 238, 0.9);
+  transform: rotate(-2deg);
+  transition: transform 0.4s var(--ease-bounce), box-shadow 0.4s ease;
+  z-index: 2;
+  max-width: 220px;
+  width: 100%;
+}
+
+.photo-frame-card:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 0 20px 45px rgba(233, 30, 99, 0.35);
+}
+
+.frame-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 224, 130, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px dashed rgba(212, 175, 55, 0.6);
+  border-radius: 4px;
+  z-index: 5;
+}
+
+.frame-heart-pin {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 16px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  animation: pulseHeart 2s infinite ease-in-out;
+}
+
+.photo-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #FAF0F4;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.06);
+}
+
+.photo-img {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 12px 24px rgba(247, 200, 216, 0.6));
+  object-fit: cover;
+  display: block;
+}
+
+.photo-caption {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gold);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+
+.comp-side {
+  width: 100px;
+  height: 140px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 8px 16px rgba(247, 200, 216, 0.5));
+  transition: transform 0.4s var(--ease-bounce);
+}
+
+.comp-bouquet {
+  transform: rotate(-6deg);
+}
+
+.comp-bear {
+  transform: rotate(6deg);
+}
+
+.comp-side:hover {
+  transform: scale(1.08) rotate(0deg);
+}
+
+.comp-svg {
+  width: 100%;
+  height: 100%;
 }
 
 .surprise-text {
@@ -878,7 +972,7 @@ html, body {
 /* --------------------------------------------------------------------------
    7. RESPONSIVE ADJUSTMENTS
    -------------------------------------------------------------------------- */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .loading-text {
     font-size: 1.35rem;
   }
@@ -891,6 +985,26 @@ html, body {
   }
   .surprise-title {
     font-size: 2.1rem;
+  }
+  .surprise-card {
+    padding: 32px 18px;
+    gap: 16px;
+  }
+  .photo-composition {
+    gap: 6px;
+    justify-content: space-around;
+  }
+  .photo-frame-card {
+    max-width: 160px;
+    padding: 8px 8px 12px 8px;
+  }
+  .photo-caption {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+  .comp-side {
+    width: 70px;
+    height: 100px;
   }
 }
 
