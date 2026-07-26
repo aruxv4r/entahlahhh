@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Will You Be My Girlfriend? ♡</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Animated Particle & Ambient Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Ambient Blurry Blobs -->
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+
+    <!-- Main Application Viewports -->
+    <main id="app">
+      
+      <!-- ================= SCENE 1: LOADING ================= -->
+      <section id="scene-1" class="scene active">
+        <div class="loading-wrapper">
+          <!-- Rotating Pink Flower SVG -->
+          <div class="flower-loader-container">
+            <svg class="rotating-flower" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="petal-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFD9E8" />
+                  <stop offset="50%" stop-color="#F7C8D8" />
+                  <stop offset="100%" stop-color="#E91E63" />
+                </linearGradient>
+                <linearGradient id="gold-core" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F3E5AB" />
+                  <stop offset="100%" stop-color="#D4AF37" />
+                </linearGradient>
+                <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+              
+              <!-- 8 Symmetric Flower Petals -->
+              <g filter="url(#soft-glow)">
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" />
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" transform="rotate(45 50 50)" />
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" transform="rotate(90 50 50)" />
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" transform="rotate(135 50 50)" />
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" transform="rotate(180 50 50)" />
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" transform="rotate(225 50 50)" />
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" transform="rotate(270 50 50)" />
+                <path d="M50 50 C40 20, 35 5, 50 5 C65 5, 60 20, 50 50 Z" fill="url(#petal-grad-1)" opacity="0.9" transform="rotate(315 50 50)" />
+              </g>
+              
+              <!-- Center Golden Core -->
+              <circle cx="50" cy="50" r="10" fill="url(#gold-core)" />
+              <circle cx="50" cy="50" r="11" stroke="#FFFFFF" stroke-width="1" opacity="0.6" />
+            </svg>
+          </div>
+
+          <!-- Loading Caption -->
+          <div class="loading-text">
+            <span>Loading For Beautiful Girl</span>
+            <span class="typing-dots-container">
+              <span class="dot d1">.</span><span class="dot d2">.</span><span class="dot d3">.</span>
+            </span>
+            <span class="smile-tag">:&#62;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 2: LETTER ================= -->
+      <section id="scene-2" class="scene">
+        <div class="scene-2-container">
+          <div class="hint-text" id="envelope-hint">Tap the envelope to open ♡</div>
+
+          <!-- Interactive Envelope Structure -->
+          <div class="envelope-wrapper" id="envelope-wrapper">
+            <div class="envelope" id="envelope">
+              
+              <!-- Back Fold -->
+              <div class="envelope-back"></div>
+
+              <!-- Unfolding Letter Paper -->
+              <div class="letter-paper" id="letter-paper">
+                <div class="paper-border"></div>
+                <div class="letter-content">
+                  <p class="letter-salutation">To the prettiest girl,</p>
+                  <p class="letter-body">
+                    I don't really know the perfect words to describe how much you mean to me.
+                  </p>
+                  <p class="letter-body">
+                    But every conversation, every smile, and every little moment with you always makes my day better.
+                  </p>
+                  <p class="letter-body letter-so">So...</p>
+                  <p class="letter-body">I just want to ask one simple question.</p>
+                  <p class="letter-question">
+                    Will you make me the happiest person by being my girlfriend?
+                  </p>
+                  <div class="letter-heart">♡</div>
+                </div>
+              </div>
+
+              <!-- Envelope Flaps & Pocket -->
+              <div class="envelope-pocket"></div>
+              <div class="envelope-left"></div>
+              <div class="envelope-right"></div>
+              <div class="envelope-top-flap" id="envelope-top-flap">
+                <div class="top-flap-shape"></div>
+                <!-- Golden-edged White Heart Seal -->
+                <div class="heart-seal" id="heart-seal">
+                  <svg viewBox="0 0 32 32" class="seal-icon">
+                    <path d="M16 28 C16 28, 3 18, 3 10 C3 5.5, 6.5 2, 11 2 C13.8 2, 15.3 3.5, 16 4.5 C16.7 3.5, 18.2 2, 21 2 C25.5 2, 29 5.5, 29 10 C29 18, 16 28, 16 28 Z" fill="#FFFFFF" stroke="#F3E5AB" stroke-width="1.2" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fade-In Next Button -->
+          <div class="button-wrapper">
+            <button id="btn-to-scene-3" class="btn-primary fade-hidden">
+              <span>Next</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 3: FLOWERS & PROPOSAL ================= -->
+      <section id="scene-3" class="scene dark-theme">
+        <div class="scene-3-content">
+          <!-- Growing SVG Flowers Garden Container -->
+          <div id="flowers-garden" class="flowers-garden"></div>
+
+          <!-- Proposal Question Overlay -->
+          <div id="proposal-box" class="proposal-box fade-hidden">
+            <h1 class="proposal-title">Do you want to be my girlfriend?</h1>
+            
+            <!-- Choice Buttons -->
+            <div class="proposal-actions" id="proposal-actions">
+              <button id="btn-yes" class="btn-yes">
+                <span>YESSS ❤️</span>
+              </button>
+              <button id="btn-no" class="btn-no">
+                <span>NO :&#60;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 4: SURPRISE ================= -->
+      <section id="scene-4" class="scene surprise-theme">
+        <!-- Confetti & Celebration Sparkles Canvas -->
+        <canvas id="confetti-canvas"></canvas>
+
+        <div class="surprise-card glass-panel">
+          
+          <!-- Cute Teddy Bear & Bouquet Illustration -->
+          <div class="illustration-container">
+            <svg class="surprise-illustration" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="bear-fur" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#E2B391" />
+                  <stop offset="100%" stop-color="#C68B59" />
+                </radialGradient>
+                <linearGradient id="heart-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FF5252" />
+                  <stop offset="100%" stop-color="#E91E63" />
+                </linearGradient>
+                <linearGradient id="gold-ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFE082" />
+                  <stop offset="100%" stop-color="#D4AF37" />
+                </linearGradient>
+              </defs>
+
+              <!-- Bouquet of Roses Left side -->
+              <g class="bouquet-group" transform="translate(30, 40)">
+                <!-- Stems -->
+                <path d="M30 110 Q25 70 15 40" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" />
+                <path d="M30 110 Q35 70 45 35" stroke="#388E3C" stroke-width="4" stroke-linecap="round" />
+                <path d="M30 110 Q30 65 30 25" stroke="#417D31" stroke-width="4" stroke-linecap="round" />
+                
+                <!-- Leaves -->
+                <path d="M22 75 C10 70, 5 80, 20 85 Z" fill="#4CAF50" />
+                <path d="M38 70 C50 65, 55 75, 40 80 Z" fill="#388E3C" />
+
+                <!-- Rose Heads -->
+                <circle cx="15" cy="35" r="14" fill="#FF4081" />
+                <circle cx="15" cy="35" r="9" fill="#F50057" />
+                <path d="M10 32 C12 28, 18 28, 20 32 C22 36, 16 40, 15 35 Z" fill="#FF80AB" />
+
+                <circle cx="45" cy="30" r="15" fill="#E91E63" />
+                <circle cx="45" cy="30" r="10" fill="#C2185B" />
+                <path d="M40 27 C42 23, 48 23, 50 27 C52 31, 46 35, 45 30 Z" fill="#FF80AB" />
+
+                <circle cx="30" cy="20" r="16" fill="#FF1744" />
+                <circle cx="30" cy="20" r="11" fill="#D50000" />
+                <path d="M25 17 C27 13, 33 13, 35 17 C37 21, 31 25, 30 20 Z" fill="#FF8A80" />
+
+                <!-- Ribbon Wrap -->
+                <path d="M15 100 Q30 110 45 100 Q30 90 15 100 Z" fill="url(#gold-ribbon)" />
+                <path d="M30 102 L20 125 L28 120 L30 102 Z" fill="url(#gold-ribbon)" />
+                <path d="M30 102 L40 125 L32 120 L30 102 Z" fill="url(#gold-ribbon)" />
+              </g>
+
+              <!-- Cute Teddy Bear Center-Right -->
+              <g class="bear-group" transform="translate(110, 30)">
+                <!-- Ears -->
+                <circle cx="30" cy="30" r="14" fill="url(#bear-fur)" />
+                <circle cx="30" cy="30" r="8" fill="#F8BBD0" />
+                <circle cx="90" cy="30" r="14" fill="url(#bear-fur)" />
+                <circle cx="90" cy="30" r="8" fill="#F8BBD0" />
+
+                <!-- Head -->
+                <ellipse cx="60" cy="50" rx="36" ry="30" fill="url(#bear-fur)" />
+                <!-- Muzzle -->
+                <ellipse cx="60" cy="58" rx="16" ry="12" fill="#FFF" opacity="0.9" />
+                <!-- Nose -->
+                <ellipse cx="60" cy="54" rx="5" ry="4" fill="#3E2723" />
+                <!-- Eyes -->
+                <circle cx="48" cy="46" r="4" fill="#212121" />
+                <circle cx="49" cy="45" r="1.5" fill="#FFF" />
+                <circle cx="72" cy="46" r="4" fill="#212121" />
+                <circle cx="73" cy="45" r="1.5" fill="#FFF" />
+                <!-- Blushing Cheeks -->
+                <ellipse cx="40" cy="56" rx="6" ry="4" fill="#FF80AB" opacity="0.6" />
+                <ellipse cx="80" cy="56" rx="6" ry="4" fill="#FF80AB" opacity="0.6" />
+
+                <!-- Body -->
+                <ellipse cx="60" cy="110" rx="32" ry="36" fill="url(#bear-fur)" />
+
+                <!-- Paws Holding Heart -->
+                <ellipse cx="32" cy="95" rx="12" ry="10" fill="url(#bear-fur)" transform="rotate(-15 32 95)" />
+                <ellipse cx="88" cy="95" rx="12" ry="10" fill="url(#bear-fur)" transform="rotate(15 88 95)" />
+
+                <!-- Big Shiny Heart Held by Bear -->
+                <path d="M60 120 C60 120, 32 100, 32 82 C32 72, 40 65, 50 65 C56 65, 59 68, 60 70 C61 68, 64 65, 70 65 C80 65, 88 72, 88 82 C88 100, 60 120, 60 120 Z" fill="url(#heart-grad)" />
+                <ellipse cx="48" cy="74" rx="4" ry="2" fill="#FFF" opacity="0.6" transform="rotate(-30 48 74)" />
+
+                <!-- Legs -->
+                <ellipse cx="38" cy="140" rx="14" ry="10" fill="url(#bear-fur)" />
+                <ellipse cx="82" cy="140" rx="14" ry="10" fill="url(#bear-fur)" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Celebration Message -->
+          <div class="surprise-text">
+            <h1 class="surprise-title">YAYYYYY ❤️</h1>
+            <p class="surprise-subtitle">You just made me the happiest person.</p>
+            <p class="surprise-thanks">Thank you for saying YES!</p>
+            <div class="surprise-heart">♡</div>
+          </div>
+
+          <!-- Replay Button -->
+          <div class="replay-wrapper">
+            <button id="btn-replay" class="btn-primary btn-glow">
+              <span>Replay</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 4v6h6M23 20v-6h-6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Main Logic Script -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
